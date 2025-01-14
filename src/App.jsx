@@ -1,13 +1,16 @@
+import MovieSearch from "./components/MovieSearch"
 
 
 function App() {
  
 
   return (
-    <>
-      Hello World!!!
-    </>
+    <div className="App">
+      
+      <MovieSearch />
+
+    </div>
   )
 }
 
-export default App
+export default App;
