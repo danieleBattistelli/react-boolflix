@@ -13,7 +13,6 @@ const AppProvider = ({ children }) => {
     const [tvResults, setTvResults] = useState([]);
     const [moviePage, setMoviePage] = useState(0); 
     const [tvPage, setTvPage] = useState(0);
-
     const ITEMS_PER_PAGE = 5;
 
     const search = () => {
@@ -71,23 +70,15 @@ const AppProvider = ({ children }) => {
         search();
     };
 
-    const scroll = (ref, setPage, currentPage, totalPages) => {
+    const scroll = (setPage, currentPage, totalPages) => {
         if (currentPage + 1 < totalPages) {
             setPage(currentPage + 1);
-            ref.current.scrollBy({
-                left: ref.current.clientWidth,
-                behavior: 'smooth',
-            });
         }
     };
 
-    const scrollBack = (ref, setPage, currentPage) => {
+    const scrollBack = (setPage, currentPage) => {
         if (currentPage - 1 >= 0) {
             setPage(currentPage - 1);
-            ref.current.scrollBy({
-                left: -ref.current.clientWidth,
-                behavior: 'smooth',
-            });
         }
     };
 

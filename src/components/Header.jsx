@@ -14,7 +14,7 @@ const Header = () => {
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     onKeyUp={handleKeyUp}
-                    placeholder="Inserisci il nome del film o della serie TV"
+                    placeholder="   Enter Film or TV Series"
                 />
                 <button onClick={handleSearch}>Cerca</button>
             </div>
