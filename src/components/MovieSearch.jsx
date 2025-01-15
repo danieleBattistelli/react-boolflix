@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
+import Header from './Header';
 import Card from './Card';
 
 
@@ -81,6 +82,10 @@ const MovieSearch = () => {
         }
     };
 
+    const handleSearch = () => { 
+        search(); 
+    };
+
     // implemento lo scorrimento orizzontale delle card
     const scroll = (ref, setPage, currentPage, totalPages) => {
         if (currentPage + 1 < totalPages) {
@@ -109,15 +114,9 @@ const MovieSearch = () => {
 
     return (
         <div>
-            <input
-                type="text"
-                value={query}
-                onChange={handleInputChange}
-                onKeyUp={handleKeyUp}
-                placeholder="Inserisci il nome del film o della serie TV"
-            />
+            <Header query={query} setQuery={setQuery} handleKeyUp={handleKeyUp} />
 
-            <button onClick={search}>Cerca</button>
+           
 
             <div id="results">
 

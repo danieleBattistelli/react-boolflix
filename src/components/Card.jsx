@@ -30,6 +30,13 @@ const renderStars = (vote) => {
 };
 
 const Card = ({ result }) => {
+    if(!result.posterPath){
+        return(
+            <div className="card-placeholder">
+                <p>Immagine non disponibile</p>
+            </div>
+        );
+    }
     return (
         <div className="card">
             <img src={IMAGE_BASE_URL + result.posterPath} alt={`${result.title} Poster`} />
