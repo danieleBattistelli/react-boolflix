@@ -1,7 +1,10 @@
-import React from 'react';
- 
+import React, { useContext } from 'react';
+import { AppContext } from '../context/AppContext';
 
-const Header = ({ query, setQuery, handleKeyUp, handleSearch }) => {
+
+const Header = () => {
+    const { query, setQuery, handleKeyUp, handleSearch } = useContext(AppContext);
+
     return (
         <div className="header">
             <img src={"/img/logo.png"} alt="Logo" className="logo" />
